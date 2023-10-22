@@ -1,13 +1,17 @@
-import React from 'react';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 
 type Props = {
-  title: string;
-  keywords: string;
-  description: string;
+  title?: string;
+  keywords?: string;
+  description?: string;
 };
 
-const Meta = ({ title, keywords, description }: Props) => {
+const Meta = ({
+  title = "Tech Innovation Club",
+  keywords = "Tech, Technology, Innovation, Club, University, pau, Pan-Atlantic University ",
+  description = "TIC - Tech Innovation Club",
+}: Props) => {
   return (
     <Head>
       {/* <meta
@@ -21,36 +25,16 @@ const Meta = ({ title, keywords, description }: Props) => {
       <link rel="icon" href={"/assets/images/ticLogo.svg"} />
       <link rel="canonical" href="https://tic-pau.netlify.app/" />
       <title>{title}</title>
-      <meta
-        name="og:title"
-        content="Tech Innovation Club"
-      />
-      <meta
-        name="og:description"
-        content="TIC - Tech Innovation Club"
-      />
+      <meta name="og:title" content="Tech Innovation Club" />
+      <meta name="og:description" content="TIC - Tech Innovation Club" />
       <meta name="og:image" content={"/assets/images/ticLogo.svg"} />
       <meta name="og:url" content="https://tic-pau.netlify.app/" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:title"
-        content="Tech Innovation Club"
-      />
-      <meta
-        name="twitter:description"
-        content="TIC - Tech Innovation Club"
-      />
+      <meta name="twitter:title" content="Tech Innovation Club" />
+      <meta name="twitter:description" content="TIC - Tech Innovation Club" />
       <meta name="twitter:image" content={"/assets/images/ticLogo.svg"} />
     </Head>
   );
-};
-
-Meta.defaultProps = {
-  title: 'Tech Innovation Club',
-  keywords:
-    'Tech, Technology, Innovation, Club, University, pau, Pan-Atlantic University ',
-  description:
-    "TIC - Tech Innovation Club",
 };
 
 export default Meta;
