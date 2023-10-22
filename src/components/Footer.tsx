@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   return (
     <Box
-      bg={"/FFFFFF"}
+      bg={"#FFFFFF"}
       px="2rem"
       pt={"2rem"}
       gap={"10"}
@@ -27,14 +27,14 @@ const Footer = () => {
               src={"/assets/images/ticLogo.svg"}
               alt="ticLogo"
             /> */}
-            <Text
-              fontSize={{ base: "1rem", md: "1.25rem", lg: "1.5rem" }}
-              fontWeight={"500"}
-              fontFamily={"iceberg"}
-              mb={"0.2rem"}
-            >
-              THE TECH INNOVATION CLUB
-            </Text>
+          <Text
+            fontSize={{ base: "1rem", md: "1.25rem", lg: "1.5rem" }}
+            fontWeight={"500"}
+            fontFamily={"iceberg"}
+            mb={"0.2rem"}
+          >
+            THE TECH INNOVATION CLUB
+          </Text>
           {/* </Flex> */}
           <Text
             fontSize={{ base: "0.75rem", lg: "1rem" }}
@@ -55,16 +55,16 @@ const Footer = () => {
             <Link href={"/about"}>
               <Text>About</Text>
             </Link>
-            <Link href={"/getstarted"}>
+            <Link href={"/"}>
               <Text>Get started</Text>
             </Link>
-            <Link href={"/howitworks"}>
+            <Link href={"/how-it-works"}>
               <Text>How it works</Text>
             </Link>
-            <Link href={"/pastprojects"}>
+            <Link href={"/"}>
               <Text>Past projects</Text>
             </Link>
-            <Link href={"/programtimeline"}>
+            <Link href={"/"}>
               <Text>2023/2024 program timeline</Text>
             </Link>
           </Flex>{" "}
@@ -77,16 +77,16 @@ const Footer = () => {
             fontWeight={"300"}
             fontFamily={"inter"}
           >
-            <Link href={"/program"}>
+            <Link href={"/"}>
               <Text>2022 program</Text>
             </Link>
-            <Link href={"/news"}>
+            <Link href={"/"}>
               <Text>News</Text>
             </Link>
-            <Link href={"/help"}>
+            <Link href={"/"}>
               <Text>Help</Text>
             </Link>
-            <Link href={"/contact"}>
+            <Link href={"/"}>
               <Text>Contract</Text>
             </Link>
           </Flex>{" "}
@@ -108,13 +108,13 @@ const Footer = () => {
               alt="ticLogo"
             />
           </Link>
-          <Link href={"/privacy"}>
+          <Link href={"/"}>
             <Text>Privacy</Text>
           </Link>
-          <Link href={"/rules"}>
+          <Link href={"/"}>
             <Text>Rules</Text>
           </Link>
-          <Link href={"/terms"}>
+          <Link href={"/"}>
             <Text>Terms</Text>
           </Link>
         </Flex>

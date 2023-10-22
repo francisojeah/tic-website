@@ -53,12 +53,12 @@ function SideMenu() {
       },
       {
         title: "Get started",
-        link: "get-started",
+        link: "",
         isActive: false,
       },
       {
         title: "Past programs",
-        link: "past-programs",
+        link: "",
         isActive: false,
       },
     ],
@@ -68,17 +68,17 @@ function SideMenu() {
   const subMenus: any = [
     {
       title: "Help",
-      link: "help",
+      link: "",
       isActive: false,
     },
     {
       title: "Rules",
-      link: "rules",
+      link: "",
       isActive: false,
     },
     {
       title: "Terms",
-      link: "terms",
+      link: "",
       isActive: false,
     },
   ];
