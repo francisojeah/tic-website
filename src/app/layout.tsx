@@ -1,10 +1,27 @@
+
 import type { Metadata } from "next";
-import {  Open_Sans, Raleway } from "next/font/google";
+import {  Open_Sans, Iceberg, JetBrains_Mono, Inter,  Raleway } from "next/font/google";
 import { Providers } from "./providers";
 
-const openSans = Open_Sans({
+export const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
+});
+
+export const iceberg = Iceberg({
+  subsets: ["latin"],
+  variable: "--font-iceberg",
+  weight: "400"
+});
+
+export const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jet-brains-mono",
+});
+
+export const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" });
@@ -15,10 +32,10 @@ const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" });
 //   weight: "400",
 // });
 
-export const metadata: Metadata = {
-  title: "Modern Logistics Services Limited",
-  description: "We simply add quality to your business by giving you the best service you could ever get",
-};
+// export const metadata: Metadata = {
+//   title: "Tech Innovation Club",
+//   description: "TIC - Tech Innovation Club",
+// };
 
 export default function RootLayout({
   children,

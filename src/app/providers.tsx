@@ -1,19 +1,20 @@
-'use client'
+"use client";
 
-import { theme } from '@/styles/theme'
-import { CacheProvider } from '@chakra-ui/next-js'
-import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from "@/styles/theme";
+import { CacheProvider } from "@chakra-ui/next-js";
+import { ChakraProvider } from "@chakra-ui/react";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import store from "@/store/store";
+import { Provider } from "react-redux";
 
-export function Providers({ 
-    children 
-  }: { 
-  children: React.ReactNode 
-  }) {
+export function Providers({ children }: { children: React.ReactNode }) {
+  let persister = persistStore(store);
   return (
-    <CacheProvider>
-      <ChakraProvider theme={theme}>
-        {children}
-      </ChakraProvider>
-    </CacheProvider>
-  )
+    <Provider store={store}>
+      <CacheProvider>
+          <ChakraProvider theme={theme}>{children}</ChakraProvider>
+        </CacheProvider>
+    </Provider>
+  );
 }

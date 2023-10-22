@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box } from "@chakra-ui/react";
 
 interface ComponentType {
   bgColor?: string;
@@ -12,14 +12,15 @@ function BodyWrapper({ id, bgColor, children }: ComponentType) {
       id={id}
       bg={bgColor}
       width={{
-        base: 'full',
-        r: '1440px',
-        md: '768px',
-        lg: '960px',
-        xl: '1200px',
+        base: "full",
+        r: "1440px",
+        md: "768px",
+        lg: "960px",
+        xl: "1200px",
       }}
       mx="auto"
-      position={'relative'}
+      px={{ lg: "unset", base: "1rem" }}
+      position={"relative"}
     >
       {children}
     </Box>
