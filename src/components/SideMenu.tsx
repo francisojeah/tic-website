@@ -21,13 +21,12 @@ import { updateMenu } from "@/store/slices/menuSlice";
 import Link from "next/link";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import React from "react";
-import { useRouter, usePathname } from "next/navigation";
+import {  usePathname } from "next/navigation";
 
 function SideMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef(null);
 
-  const router = useRouter();
   const pathname = usePathname();
 
   const dispatch = useDispatch<Dispatch<any>>();
@@ -101,7 +100,7 @@ function SideMenu() {
         menus.findIndex((sidemenu: any) => sidemenu.title === sideMenuTitle)
       );
     }
-  }, [location.pathname, menus, activeSideMenu, dispatch]);
+  }, [pathname, menus, activeSideMenu, dispatch]);
   return (
     <Box h="full">
       <Flex py={"1rem"} h="full" gap={"50vh"} flexDirection={"column"}>
@@ -148,7 +147,7 @@ function SideMenu() {
                   mb={"2rem"}
                 >
                   {menus.map(({ title, link }: any, index: number) => (
-                    <Link href={`/${link}`} style={{ textDecoration: "unset" }}>
+                    <Link key={index} href={`/${link}`} style={{ textDecoration: "unset" }}>
                       <Box
                         px={"0.5rem"}
                         borderLeft={
@@ -172,7 +171,7 @@ function SideMenu() {
                   fontFamily={"inter"}
                 >
                   {subMenus.map(({ title, link }: any, index: number) => (
-                    <Link href={`/${link}`} style={{ textDecoration: "unset" }}>
+                    <Link key={index} href={`/${link}`} style={{ textDecoration: "unset" }}>
                       <Text>{title}</Text>
                     </Link>
                   ))}
