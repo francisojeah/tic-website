@@ -1,10 +1,7 @@
-"use client";
-
 import { theme } from "@/styles/theme";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";
 import { persistStore } from "redux-persist";
-import { PersistGate } from "redux-persist/integration/react";
 import store from "@/store/store";
 import { Provider } from "react-redux";
 

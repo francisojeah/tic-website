@@ -1,7 +1,7 @@
-
 import type { Metadata } from "next";
 import {  Open_Sans, Iceberg, JetBrains_Mono, Inter,  Raleway } from "next/font/google";
 import { Providers } from "./providers";
+import Meta from "@/components/Meta";
 
 export const openSans = Open_Sans({
   subsets: ["latin"],
@@ -32,10 +32,6 @@ const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" });
 //   weight: "400",
 // });
 
-// export const metadata: Metadata = {
-//   title: "Tech Innovation Club",
-//   description: "TIC - Tech Innovation Club",
-// };
 
 export default function RootLayout({
   children,
@@ -44,8 +40,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Meta/>
       <body
-        className={` ${raleway.variable} ${openSans.className}  font-sans`}
+        className={` ${iceberg.variable} ${openSans.className}  font-sans`}
       >
         <Providers>{children}</Providers>
       </body>

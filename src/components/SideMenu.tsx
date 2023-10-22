@@ -100,7 +100,7 @@ function SideMenu() {
         menus.findIndex((sidemenu: any) => sidemenu.title === sideMenuTitle)
       );
     }
-  }, [pathname, menus, activeSideMenu, dispatch]);
+  }, [pathname, menus, handleSideMenuClick, activeSideMenu, dispatch]);
   return (
     <Box h="full">
       <Flex py={"1rem"} h="full" gap={"50vh"} flexDirection={"column"}>
