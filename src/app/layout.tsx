@@ -1,4 +1,10 @@
-import {  Open_Sans, Iceberg, JetBrains_Mono, Inter,  Raleway } from "next/font/google";
+import {
+  Open_Sans,
+  Iceberg,
+  JetBrains_Mono,
+  Inter,
+  Raleway,
+} from "next/font/google";
 import { Providers } from "./providers";
 import Meta from "@/components/Meta";
 
@@ -10,7 +16,7 @@ export const openSans = Open_Sans({
 export const iceberg = Iceberg({
   subsets: ["latin"],
   variable: "--font-iceberg",
-  weight: "400"
+  weight: "400",
 });
 
 export const jetBrainsMono = JetBrains_Mono({
@@ -31,7 +37,6 @@ const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" });
 //   weight: "400",
 // });
 
-
 export default function RootLayout({
   children,
 }: {
@@ -39,10 +44,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Meta/>
-      <body
-        className={` ${iceberg.variable} ${openSans.className}  font-sans`}
-      >
+      <body className={` ${iceberg.variable} ${openSans.className}  font-sans`}>
+        <Meta />
         <Providers>{children}</Providers>
       </body>
     </html>
