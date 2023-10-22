@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: any = {
   menu: 0,
@@ -6,8 +6,8 @@ const initialState: any = {
 
 export const subscribe = () => {};
 
-export const menuSlice = createSlice({
-  name: 'menu',
+export const menuSlice: any = createSlice({
+  name: "menu",
   initialState,
   reducers: {
     updateMenu: (state, action: PayloadAction<number>): void => {

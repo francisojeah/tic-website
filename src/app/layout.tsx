@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {  Open_Sans, Iceberg, JetBrains_Mono, Inter,  Raleway } from "next/font/google";
 import { Providers } from "./providers";
 import Meta from "@/components/Meta";

@@ -1,5 +1,5 @@
 import { Dispatch } from "@reduxjs/toolkit";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { RootState } from "@/store/store";
 import {
   Box,
@@ -21,7 +21,7 @@ import { updateMenu } from "@/store/slices/menuSlice";
 import Link from "next/link";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import React from "react";
-import {  usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 function SideMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -34,37 +34,36 @@ function SideMenu() {
 
   const { menu }: any = activeSideMenu;
 
-  const handleSideMenuClick = (sidemenu: number) => {
-    dispatch(updateMenu(sidemenu));
-  };
-
-  const menus: any = [
-    {
-      title: "Home",
-      link: "",
-      isActive: true,
-    },
-    {
-      title: "About",
-      link: "about",
-      isActive: false,
-    },
-    {
-      title: "How it works",
-      link: "how-it-works",
-      isActive: false,
-    },
-    {
-      title: "Get started",
-      link: "get-started",
-      isActive: false,
-    },
-    {
-      title: "Past programs",
-      link: "past-programs",
-      isActive: false,
-    },
-  ];
+  const menus: any = useMemo(
+    () => [
+      {
+        title: "Home",
+        link: "",
+        isActive: true,
+      },
+      {
+        title: "About",
+        link: "about",
+        isActive: false,
+      },
+      {
+        title: "How it works",
+        link: "how-it-works",
+        isActive: false,
+      },
+      {
+        title: "Get started",
+        link: "get-started",
+        isActive: false,
+      },
+      {
+        title: "Past programs",
+        link: "past-programs",
+        isActive: false,
+      },
+    ],
+    []
+  );
 
   const subMenus: any = [
     {
@@ -85,6 +84,10 @@ function SideMenu() {
   ];
 
   useEffect(() => {
+    const handleSideMenuClick = (sidemenu: number) => {
+      dispatch(updateMenu(sidemenu));
+    };
+
     const tempPathName = pathname.split("/");
     const pathName =
       tempPathName[tempPathName.length - 1] !== ""
@@ -100,7 +103,7 @@ function SideMenu() {
         menus.findIndex((sidemenu: any) => sidemenu.title === sideMenuTitle)
       );
     }
-  }, [pathname, menus, handleSideMenuClick, activeSideMenu, dispatch]);
+  }, [pathname, menus, activeSideMenu, dispatch]);
   return (
     <Box h="full">
       <Flex py={"1rem"} h="full" gap={"50vh"} flexDirection={"column"}>
@@ -147,7 +150,11 @@ function SideMenu() {
                   mb={"2rem"}
                 >
                   {menus.map(({ title, link }: any, index: number) => (
-                    <Link key={index} href={`/${link}`} style={{ textDecoration: "unset" }}>
+                    <Link
+                      key={index}
+                      href={`/${link}`}
+                      style={{ textDecoration: "unset" }}
+                    >
                       <Box
                         px={"0.5rem"}
                         borderLeft={
@@ -171,7 +178,11 @@ function SideMenu() {
                   fontFamily={"inter"}
                 >
                   {subMenus.map(({ title, link }: any, index: number) => (
-                    <Link key={index} href={`/${link}`} style={{ textDecoration: "unset" }}>
+                    <Link
+                      key={index}
+                      href={`/${link}`}
+                      style={{ textDecoration: "unset" }}
+                    >
                       <Text>{title}</Text>
                     </Link>
                   ))}
