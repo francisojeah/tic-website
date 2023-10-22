@@ -13,6 +13,7 @@ import {
   Flex,
   IconButton,
   Text,
+  Image,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,10 +21,14 @@ import { updateMenu } from "@/store/slices/menuSlice";
 import Link from "next/link";
 import { HamburgerIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import React from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 function SideMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef(null);
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   const dispatch = useDispatch<Dispatch<any>>();
   const activeSideMenu = useSelector<RootState>((state) => state.menu);
@@ -81,7 +86,7 @@ function SideMenu() {
   ];
 
   useEffect(() => {
-    const tempPathName = location.pathname.split("/");
+    const tempPathName = pathname.split("/");
     const pathName =
       tempPathName[tempPathName.length - 1] !== ""
         ? tempPathName.filter((element: any) => element !== "")
@@ -176,17 +181,20 @@ function SideMenu() {
             </DrawerContent>
           </Drawer>
         </Flex>
-        <Box transform={"rotate(-90deg)"} whiteSpace={"nowrap"}>
-          <Link href={"/"}>
-            <Text
-              fontFamily={"iceberg"}
-              fontSize={{ lg: "1.5rem", base: "1.25rem" }}
-              fontWeight={"400"}
-            >
-              TECH INNOVATION CLUB
-            </Text>
-          </Link>
-        </Box>
+        <Link href={"/"}>
+          <Flex flexDirection={"column"} gap={"2.5rem"}>
+            <Box transform={"rotate(-90deg)"} whiteSpace={"nowrap"}>
+              <Text
+                fontFamily={"iceberg"}
+                fontSize={{ lg: "1.5rem", base: "1.25rem" }}
+                fontWeight={"400"}
+              >
+                TECH INNOVATION CLUB
+              </Text>
+            </Box>{" "}
+            <Image src={"/assets/images/ticLogo.svg"} alt="ticLogo" />
+          </Flex>
+        </Link>
       </Flex>
     </Box>
   );
