@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/head";
+import { Metadata } from 'next'
 
 type Props = {
   title?: string;
@@ -13,7 +13,7 @@ const Meta = ({
   description = "TIC - Tech Innovation Club",
 }: Props) => {
   return (
-    <Head>
+    <>
       {/* <meta
         name="google-site-verification"
         content="2WxeB47QwUgB4OtawGepEVh_ISIlKflFNyYzYsGXQ9k"
@@ -33,7 +33,7 @@ const Meta = ({
       <meta name="twitter:title" content="Tech Innovation Club" />
       <meta name="twitter:description" content="TIC - Tech Innovation Club" />
       <meta name="twitter:image" content={"/assets/images/ticLogo.svg"} />
-    </Head>
+    </>
   );
 };
 
