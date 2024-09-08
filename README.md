@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TIC Website
 
-## Getting Started
+The **Technology Innovation Club (TIC) Website** is the official platform for the TIC at Pan-Atlantic University. It serves to showcase the club's activities, events, and resources, reflecting its innovative and collaborative spirit.
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Modern Web Development**: Built with **Next.js** and **React** for fast, dynamic, and SEO-friendly pages.
+- **Responsive Design**: Uses **Chakra UI** for a clean, responsive, and accessible user interface.
+- **TypeScript**: Ensures type safety and enhanced code quality.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: Framework for React with server-side rendering and static site generation.
+- **React**: JavaScript library for building user interfaces.
+- **Chakra UI**: Component library for accessible and responsive design.
+- **TypeScript**: Typed superset of JavaScript for better tooling and code quality.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## How to Run
 
-## Learn More
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/francisojeah/tic-website.git
+   cd tic-website
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run the Application**
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. **Access the Website**
+   - The website will be accessible at `http://localhost:3000`.
 
-## Deploy on Vercel
+## Live Demo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Check out the live website: [TIC Website](https://tic-pau.netlify.app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contribution
+
+Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
+
+## License
+
+This project is open-source and available under the MIT License. See the [LICENSE](LICENSE) file for more information.
